@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maa Barahi Junior High School</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo">Maa Barahi Junior High School</div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#academics">Academics</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Welcome to Maa Barahi Junior High School</h1>
+        <p>Empowering the future with knowledge and values</p>
+        <a href="#about" class="btn">Learn More</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>Maa Barahi Junior High School, located in bitthalpur, Raniganj, Pratapgarh, is dedicated to providing quality education to over 1,000 students with a team of 20 experienced teachers. Our mission is to inspire and nurture young minds to achieve their full potential.</p>
+    </section>
+
+    <!-- Academics Section -->
+    <section id="academics" class="academics">
+        <h2>Academics</h2>
+        <div class="academic-details">
+            <div class="academic-item">
+                <h3>Primary Education</h3>
+                <p>We focus on building strong foundations in core subjects for our primary students.</p>
+            </div>
+            <div class="academic-item">
+                <h3>Secondary Education</h3>
+                <p>Our curriculum is designed to prepare students for higher education and competitive exams.</p>
+            </div>
+            <div class="academic-item">
+                <h3>Co-Curricular Activities</h3>
+                <p>We encourage participation in sports, arts, and cultural events to promote all-round development.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-images">
+            <img src="ss.jpg" alt="School Building"
+            onclick="openModal(this.src)">
+            <img src="schoolnew.jpg" alt="Students in Classroom">
+            <img src="school.jpg" alt="Annual Function">
+            <img src="diwalipic.jpg" alt="diwalipic">
+            <img src="diwalipic2.jpg" alt="diwalipic">
+            <img src="diwalipic3.jpg" alt="diwalipic">
+            <img src="diwalipic4.jpg" alt="diwalipic">
+            <img src="annualfunction1.jpg" alt="annualfunction1">
+            <img src="annualfunction2.jpg" alt="annualfunction2">
+            <img src="annualfunction3.jpg" alt="annualfunction3">
+            <img src="annualfunction4.jpg" alt="annualfunction4">
+            <img src="annualfunction5.jpg" alt="annualfunction5">
+            <img src="annualfunction6.jpg" alt="annualfunction6">
+            <img src="annualfunction7.jpg" alt="annualfunction7">
+            <img src="annualfunction8.jpg" alt="annualfunction8">
+            <img src="26janpic.jpg" alt="26janpic">
+            <img src="26janpic2.jpg" alt="26janpic2">
+            <img src="26janpic3.jpg" alt="26janpic3">
+            <img src="26janpic4.jpg" alt="26janpic4">
+
+        </div>
+    </section>
+
+    <div>
+        <h1 style=" background-color: brown; color: white;">Student Exam Sheet Information </h>
+           
+          
+            <h1>Student Information Finder</h1>
+            <input type="text" id="studentName" placeholder="Enter Student Name">
+            <button onclick="findStudent()">Find Info</button>
+            <h2 id="result"></h2>
+          
+            <script>
+              // Students data
+              const students = {
+                "Sumit Mishra": { class: "5th", sheet: "A" },
+                "Anuj Mishra": { class: "6th", sheet: "B" },
+                "Sarvesh Mishra": { class: "7th", sheet: "C" },
+                "Aman Mishra": { class: "8th", sheet: "D" },
+                "Himanshu Yadav": { class: "9th", sheet: "E" },
+                "Rahul Mishra": { class: "9th", sheet: "E" },
+                "Palak  Mishra": { class: "9th", sheet: "E" }
+              };
+          
+              // Function to find student info
+              function findStudent() {
+                const name = document.getElementById("studentName").value.trim();
+                const resultElement = document.getElementById("result");
+          
+                if (name in students) {
+                  const { class: studentClass, sheet } = students[name];
+                  resultElement.textContent = `${name} is in Class: ${studentClass}, Sheet: ${sheet}`;
+                  resultElement.style.color = "green";
+                } else {
+                  resultElement.textContent = "Student not found. Please try again.";
+                  resultElement.style.color = "red";
+                }
+              }
+            </script>
+
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>For inquiries, please reach out to us:</p>
+        <ul>
+            <li>Phone: +919580257693</li>
+            <li>Email: info@mbjhs.com</li>
+            <li>Address: Vitthalpur, Raniganj, Pratapgarh, Uttar Pradesh</li>
+        </ul>
+    </section>
+
+  
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Maa Barahi Junior High School. All rights reserved.</p>
+    </footer>
+    <script src="myfirst.js"></script>
+</body>
+</html>
