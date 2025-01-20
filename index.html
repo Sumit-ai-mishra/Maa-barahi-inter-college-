@@ -8,7 +8,7 @@
 </head>
 <body>
     <!-- Header Section -->
-    <header class="header">
+   <!-- <header class="header">
         <div class="logo">Maa Barahi Junior High School</div>
         <nav class="nav-bar">
             <ul>
@@ -19,7 +19,7 @@
             </ul>
         </nav>
     </header>
-
+-->
     <!-- Hero Section -->
     <section class="hero">
         <h1>Welcome to Maa Barahi Junior High School</h1>
@@ -77,67 +77,101 @@
             <img src="26janpic4.jpg" alt="26janpic4" ondblclick="openimage(this.src)">
 
         </div>
-   
             <script>
                 function openimage(src){
                     window.open(src,'_blank');
                 }
             </script>
-            
-     </section>        
-    <div>
-        <h1 style=" background-color: brown; color: white;">Student Exam Sheet Information </h>
-           
-          
-            <h1>Student Information Finder</h1>
-            <input type="text" id="studentName" placeholder="Enter Student Name">
-            <button onclick="findStudent()">Find Info</button>
-            <h2 id="result"></h2>
-          
-            <script>
-              // Students data
-              const students = {
-                "Sumit Mishra": { class: "5th", sheet: "A" },
-                "Anuj Mishra": { class: "6th", sheet: "B" },
-                "Sarvesh Mishra": { class: "7th", sheet: "C" },
-                "Aman Mishra": { class: "8th", sheet: "D" },
-                "Himanshu Yadav": { class: "9th", sheet: "E" },
-                "Rahul Mishra": { class: "9th", sheet: "E" },
-                "Palak  Mishra": { class: "9th", sheet: "E" }
-              };
-          
-              // Function to find student info
-              function findStudent() {
-                const name = document.getElementById("studentName").value.trim();
-                const resultElement = document.getElementById("result");
-          
-                if (name in students) {
-                  const { class: studentClass, sheet } = students[name];
-                  resultElement.textContent = `${name} is in Class: ${studentClass}, Sheet: ${sheet}`;
-                  resultElement.style.color = "green";
-                } else {
-                  resultElement.textContent = "Student not found. Please try again.";
-                  resultElement.style.color = "red";
-                }
-              }
-            </script>
+    </section>        
+<!--rejult section-->
+    
+<div>
+  <h1 style=" background-color: brown; color: white;">Student Result Checker</h1>
+  <label for="StudentName">Student Name:</label>
+  <input type="text" id="StudentName" placeholder="Enter Student Name" />
+  <br />
+  <label for="FatherName">Father Name:</label>
+  <input type="text" id="FatherName" placeholder="Enter Father's Name" />
+  <br />
+  <label for="DOB">Date of Birth:</label>
+  <input type="date" id="DOB" />
+  <br />
+  <button onclick="findStudent()">Check Result</button>
+</div>
+<div id="result" style="margin-top: 20px;"></div>
+<img id="studentImage" style="display:none; margin-top: 200px;" width="400" , ondblclick="openimage(this.src)"/>
 
-    </div>
+<script>
+const students = {
+  "Sumit Mishra": {
+    dob: "1997-07-01",
+    class:"10th",
+    fatherName: "Gyan Sagar Mishra",
+    image: "ss.jpg"
+    },
+    "Md Yasir": {
+    dob: "1997-07-01",
+    class:"10th",
+    fatherName: "Md",
+    image: "mdYasir10th.jpg"
+    },
+  "Anuj Mishra": {
+    dob: "2006-03-10",
+    fatherName: "Ramesh Mishra",
+    image: "ss.jpg"
+    }
+  };
+function openimage(src){
+         window.open(src,'_blank');
+     }
+
+function findStudent() {
+  const name = document.getElementById("StudentName").value.trim();
+  const dob = document.getElementById("DOB").value.trim();
+  const fatherName = document.getElementById("FatherName").value.trim().toLowerCase();
+  const resultElement = document.getElementById("result");
+  const imageElement = document.getElementById("studentImage");
+  
+  
+  if (students[name]) {
+    const student = students[name];
+
+    if (student.dob === dob && student.fatherName.toLowerCase() === fatherName) {
+      resultElement.innerHTML = `
+        <p><b>Name:</b> ${name}</p>
+        <p><b>Date of Birth:</b> ${student.dob}</p>
+        <p><b>Father's Name:</b> ${student.fatherName}</p>
+        <p><b>Class:</b> ${student.class}</p>
+        <p><b>Image:</b> ${student.image}</p>
+      `;
+      resultElement.style.color = "green";
+      imageElement.src = student.image;
+      imageElement.style.display = "block";
+    } else {
+      resultElement.textContent = "Details do not match. Please try again.";
+      resultElement.style.color = "red";
+      imageElement.style.display = "none";
+    }
+  } else {
+    resultElement.textContent = "Student not found. Please try again.";
+    resultElement.style.color = "red";
+    imageElement.style.display = "none";
+  }
+}
+</script>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <h2>Contact Us</h2>
         <p>For inquiries, please reach out to us:</p>
         <ul>
-            <li>Phone: +919580257693</li>
-            <li>Email: info@mbjhs.com</li>
-            <li>Address: Vitthalpur, Raniganj, Pratapgarh, Uttar Pradesh</li>
+            <li>Phone: +919580257693 , +919935277590  </li>
+            <li>Email: maabarahionlinehub@gmail.com</li>
+            <li>Address: Bitthalpur, Raniganj, Pratapgarh, Uttar Pradesh</li>
         </ul>
     </section>
 
-  
-
-    <!-- Footer -->
+      <!-- Footer -->
     <footer class="footer">
         <p>&copy; 2024 Maa Barahi Junior High School. All rights reserved.</p>
     </footer>
