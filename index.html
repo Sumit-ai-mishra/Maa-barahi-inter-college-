@@ -109,17 +109,30 @@ const students = {
     fatherName: "Gyan Sagar Mishra",
     image: "ss.jpg"
     },
+     "Priya Mishra": {
+    dob: "1997-07-01",
+    class:"12th",
+    Rank: "1st",
+    fatherName: "Mishra",
+    image: "PriyaMishra12th.jpg"
+    },
+
     "Md Yasir": {
     dob: "1997-07-01",
     class:"10th",
+    Rank: "2nd",
     fatherName: "Md",
     image: "mdYasir10th.jpg"
     },
-  "Anuj Mishra": {
-    dob: "2006-03-10",
-    fatherName: "Ramesh Mishra",
-    image: "ss.jpg"
+    
+    "Saurya Jaiswal": {
+    dob: "1997-07-01",
+    class:"9th",
+    Rank: "3rd",
+    fatherName: "Jaiswal",
+    image: "SauryaJaiswal9th.jpg"
     }
+   
   };
 function openimage(src){
          window.open(src,'_blank');
@@ -142,6 +155,7 @@ function findStudent() {
         <p><b>Date of Birth:</b> ${student.dob}</p>
         <p><b>Father's Name:</b> ${student.fatherName}</p>
         <p><b>Class:</b> ${student.class}</p>
+        <p><b>Rank:</b> ${student.Rank}</p>
         <p><b>Image:</b> ${student.image}</p>
       `;
       resultElement.style.color = "green";
