@@ -144,9 +144,16 @@ function findStudent() {
 
 
     <!-- Gallery Section -->
-    <section id="gallery" class="gallery">
-        <h2>Gallery</h2>
-        <div class="gallery-images"  >
+    <h1 style=" background-color: brown; color: white;">School image</h1>
+    <style>
+        body { text-align: center; font-family: Arial, sans-serif; }
+        .gallery-btn { padding: 10px 20px; font-size: 18px; cursor: pointer; }
+        .gallery-container { display: none; text-align: center; margin-top: 20px; }
+        .gallery-container img { width: 200px; margin: 10px; border-radius: 10px; }
+    </style>
+    
+    <button class="gallery-btn" onclick="toggleGallery()">Open Gallery</button>
+    <div class="gallery-container" id="gallery">
             <img src="ss.jpg" alt="School Building" ondblclick="openimage(this.src)">
             <img src="schoolnew.jpg" alt="Students in Classroom" ondblclick="openimage(this.src)">
             <img src="school.jpg" alt="Annual Function" ondblclick="openimage(this.src)">
@@ -166,14 +173,17 @@ function findStudent() {
             <img src="26janpic2.jpg" alt="26janpic2" ondblclick="openimage(this.src)">
             <img src="26janpic3.jpg" alt="26janpic3" ondblclick="openimage(this.src)">
             <img src="26janpic4.jpg" alt="26janpic4" ondblclick="openimage(this.src)">
-
-        </div>
-            <script>
-                function openimage(src){
-                    window.open(src,'_blank');
-                }
-            </script>
-    </section>        
+    </div>
+    <script>
+        function toggleGallery() {
+            var gallery = document.getElementById('gallery');
+            if (gallery.style.display === 'none' || gallery.style.display === '') {
+                gallery.style.display = 'block';
+            } else {
+                gallery.style.display = 'none';
+            }
+        }
+    </script>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
