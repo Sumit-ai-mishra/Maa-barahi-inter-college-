@@ -144,57 +144,56 @@ function findStudent() {
 
 
     <!-- Gallery Section -->
-    <h1 style=" background-color: brown; color: white;">School image</h1>
-    <style>
-        body { text-align: center; font-family: Arial, sans-serif; }
-        .gallery-btn { padding: 10px 20px; font-size: 18px; cursor: pointer; }
-        .gallery-container { display: none; text-align: center; margin-top: 20px; }
-        .gallery-container img { width: 200px; margin: 10px; border-radius: 10px; }
+   <h1 style=" background-color: rgb(13, 199, 232); color: white;">School image</h1>
+   
+   <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .gallery-btn { padding: 10px 20px; font-size: 16px; cursor: pointer; }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); }
+        .modal-content { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; border-radius: 10px; }
+        .close-btn { cursor: pointer; font-size: 20px; float: right; }
+        .images img { width: 100px; margin: 5px; cursor: pointer; }
     </style>
+</head>
+<body>
+    <button class="gallery-btn" onclick="openGallery()">Open Gallery</button>
     
-    <button class="gallery-btn" onclick="toggleGallery()">Open Gallery</button>
-    <div class="gallery-container" id="gallery">
-            <img src="ss.jpg" alt="School Building" ondblclick="openimage(this.src)">
-            <img src="schoolnew.jpg" alt="Students in Classroom" ondblclick="openimage(this.src)">
-            <img src="school.jpg" alt="Annual Function" ondblclick="openimage(this.src)">
-            <img src="diwalipic.jpg" alt="diwalipic" ondblclick="openimage(this.src)">
-            <img src="diwalipic2.jpg" alt="diwalipic" ondblclick="openimage(this.src)">
-            <img src="diwalipic3.jpg" alt="diwalipic" ondblclick="openimage(this.src)">
-            <img src="diwalipic4.jpg" alt="diwalipic" ondblclick="openimage(this.src)">
-            <img src="annualfunction1.jpg" alt="annualfunction1" ondblclick="openimage(this.src)">
-            <img src="annualfunction2.jpg" alt="annualfunction2" ondblclick="openimage(this.src)">
-            <img src="annualfunction3.jpg" alt="annualfunction3" ondblclick="openimage(this.src)">
-            <img src="annualfunction4.jpg" alt="annualfunction4" ondblclick="openimage(this.src)">
-            <img src="annualfunction5.jpg" alt="annualfunction5" ondblclick="openimage(this.src)">
-            <img src="annualfunction6.jpg" alt="annualfunction6" ondblclick="openimage(this.src)">
-            <img src="annualfunction7.jpg" alt="annualfunction7" ondblclick="openimage(this.src)">
-            <img src="annualfunction8.jpg" alt="annualfunction8" ondblclick="openimage(this.src)">
-            <img src="26janpic.jpg" alt="26janpic" ondblclick="openimage(this.src)">
-            <img src="26janpic2.jpg" alt="26janpic2" ondblclick="openimage(this.src)">
-            <img src="26janpic3.jpg" alt="26janpic3" ondblclick="openimage(this.src)">
-            <img src="26janpic4.jpg" alt="26janpic4" ondblclick="openimage(this.src)">
+    <div class="modal" id="galleryModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeGallery()">&times;</span>
+            <h2>Image Gallery</h2>
+            <div class="images">
+                <img src="ss.jpg" alt="School Building" ondblclick="openimage(this.src)">
+                <img src="schoolnew.jpg" alt="Students in Classroom" ondblclick="openimage(this.src)">
+                <img src="school.jpg" alt="Annual Function" ondblclick="openimage(this.src)">
+                <img src="diwalipic.jpg" alt="diwalipic" ondblclick="openimage(this.src)">
+                <img src="diwalipic2.jpg" alt="diwalipic" ondblclick="openimage(this.src)">
+                <img src="diwalipic3.jpg" alt="diwalipic" ondblclick="openimage(this.src)">
+                <img src="diwalipic4.jpg" alt="diwalipic" ondblclick="openimage(this.src)">
+                <img src="annualfunction1.jpg" alt="annualfunction1" ondblclick="openimage(this.src)">
+                <img src="annualfunction2.jpg" alt="annualfunction2" ondblclick="openimage(this.src)">
+                <img src="annualfunction3.jpg" alt="annualfunction3" ondblclick="openimage(this.src)">
+                <img src="annualfunction4.jpg" alt="annualfunction4" ondblclick="openimage(this.src)">
+                <img src="annualfunction5.jpg" alt="annualfunction5" ondblclick="openimage(this.src)">
+                <img src="annualfunction6.jpg" alt="annualfunction6" ondblclick="openimage(this.src)">
+                <img src="annualfunction7.jpg" alt="annualfunction7" ondblclick="openimage(this.src)">
+                <img src="annualfunction8.jpg" alt="annualfunction8" ondblclick="openimage(this.src)">
+                <img src="26janpic.jpg" alt="26janpic" ondblclick="openimage(this.src)">
+                <img src="26janpic2.jpg" alt="26janpic2" ondblclick="openimage(this.src)">
+                <img src="26janpic3.jpg" alt="26janpic3" ondblclick="openimage(this.src)">
+                <img src="26janpic4.jpg" alt="26janpic4" ondblclick="openimage(this.src)">
+            </div>
+        </div>
     </div>
+
     <script>
-        function toggleGallery() {
-            var gallery = document.getElementById('gallery');
-            if (gallery.style.display === 'none' || gallery.style.display === '') {
-                gallery.style.display = 'block';
-            } else {
-                gallery.style.display = 'none';
-            }
+        function openGallery() {
+            document.getElementById('galleryModal').style.display = 'block';
+        }
+        function closeGallery() {
+            document.getElementById('galleryModal').style.display = 'none';
         }
     </script>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2>Contact Us</h2>
-        <p>For inquiries, please reach out to us:</p>
-        <ul>
-            <li>Phone: +919580257693 , +919935277590  </li>
-            <li>Email: maabarahionlinehub@gmail.com</li>
-            <li>Address: Bitthalpur, Raniganj, Pratapgarh, Uttar Pradesh</li>
-        </ul>
-    </section>
 
       <!-- Footer -->
     <footer class="footer">
